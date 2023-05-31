@@ -1,4 +1,3 @@
-import 'package:estilizacao_componentes/components/box_card.dart';
 import 'package:estilizacao_componentes/data/bank_inherited.dart';
 import 'package:estilizacao_componentes/screens/home.dart';
 import 'package:flutter/material.dart';
@@ -46,5 +45,21 @@ void main() {
       }
       return false;
     }), findsNWidgets(5));
+  });
+
+  testWidgets('When tap deposit should upload earned in 10', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: BankInherited(child: const Home()),
+      ),
+    );
+
+    await tester.tap(find.text('Deposit'));
+    await tester.tap(find.text('Earned'));
+    await tester.pumpAndSettle();
+    expect(
+      find.text("\$10.0"),
+      findsOneWidget,
+    );
   });
 }
