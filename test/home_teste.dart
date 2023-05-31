@@ -1,3 +1,4 @@
+import 'package:estilizacao_componentes/components/box_card.dart';
 import 'package:estilizacao_componentes/data/bank_inherited.dart';
 import 'package:estilizacao_componentes/screens/home.dart';
 import 'package:flutter/material.dart';
